@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .up {
+        color: darkblue;
+        border: 2px solid cadetblue;
+      }
+      .down {
+        color: gray;
+      }
+    </style>
+
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+      //data-score 값이 80 이상인 경우에만 해당 <li> 요소의 텍스트 색을 파란색으로 변경
+      //data-score=95 => 대상요소.data('score')
+      $(function () {
+        $("#checkScore").click(function () {
+          $("#scoreList li").each(function () {
+            console.log(typeof $(this).data("score"));
+            const score = parseInt($(this).data("score"));
+            if (score >= 80) {
+              $(this).css("color", "blue");
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>학생 점수 목록</h2>
+    <ul id="scoreList">
+      <li data-score="95">홍기동</li>
+      <li data-score="76">박길동</li>
+      <li data-score="88">김길동</li>
+      <li data-score="64">서길동</li>
+      <li data-score="82">한길동</li>
+    </ul>
+
+    <button id="checkScore">우수 학생 표시</button>
+  </body>
+</html>
