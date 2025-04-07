@@ -1,21 +1,33 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
+  <head>
     <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
     <script>
-       
+      //prop('checked', true/false)
+      //attr('checked','checked')
+      $(function () {
+        $("#all-check").change(function () {
+          if (this.checked) {
+            //$("#check-item :checkbox").prop("checked", true);
+            $("#check-item :checkbox").attr("checked", "checked");
+          } else {
+            //$("#check-item :checkbox").prop("checked", false);
+            $("#check-item :checkbox").attr("checked", false);
+          }
+        });
+      });
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <input type="checkbox" id="all-check" />
     <label>All</label>
     <div id="check-item">
-        <input type="checkbox" />
-        <label>A Option</label>
-        <input type="checkbox" />
-        <label>B Option</label>
-        <input type="checkbox" />
-        <label>C Option</label>
+      <input type="checkbox" />
+      <label>A Option</label>
+      <input type="checkbox" />
+      <label>B Option</label>
+      <input type="checkbox" />
+      <label>C Option</label>
     </div>
-</body>
+  </body>
 </html>
